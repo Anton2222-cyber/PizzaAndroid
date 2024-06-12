@@ -1,0 +1,223 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\AndroidPizza\\Backend\\WebPizza\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\data\\entities\\categoryentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\data\\entities\\categoryentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\data\\seederdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\data\\seederdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\migrations\\20240611171509_add_tbl_categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\migrations\\20240611171509_add_tbl_categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\data\\pizzadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\data\\pizzadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\webpizza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\webpizza.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|e:\\androidpizza\\backend\\webpizza\\webpizza\\webpizza.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{6B2E1EE9-ACA6-44D0-A774-341AC8FD0E7A}|WebPizza\\WebPizza.csproj|solutionrelative:webpizza\\webpizza.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 35,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "WebPizza\\Controllers\\CategoriesController.cs",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "WebPizza\\Controllers\\CategoriesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T17:36:54.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20240611171509_Add_tbl_categories.cs",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Migrations\\20240611171509_Add_tbl_categories.cs",
+              "RelativeDocumentMoniker": "WebPizza\\Migrations\\20240611171509_Add_tbl_categories.cs",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Migrations\\20240611171509_Add_tbl_categories.cs",
+              "RelativeToolTip": "WebPizza\\Migrations\\20240611171509_Add_tbl_categories.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T17:15:09.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Program.cs",
+              "RelativeDocumentMoniker": "WebPizza\\Program.cs",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Program.cs",
+              "RelativeToolTip": "WebPizza\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACsAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T15:22:03.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "WebPizza\\appsettings.Development.json",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\appsettings.Development.json",
+              "RelativeToolTip": "WebPizza\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-11T17:01:36.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PizzaDBContext.cs",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Data\\PizzaDBContext.cs",
+              "RelativeDocumentMoniker": "WebPizza\\Data\\PizzaDBContext.cs",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Data\\PizzaDBContext.cs",
+              "RelativeToolTip": "WebPizza\\Data\\PizzaDBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T16:54:34.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryEntity.cs",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Data\\Entities\\CategoryEntity.cs",
+              "RelativeDocumentMoniker": "WebPizza\\Data\\Entities\\CategoryEntity.cs",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Data\\Entities\\CategoryEntity.cs",
+              "RelativeToolTip": "WebPizza\\Data\\Entities\\CategoryEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T16:49:46.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SeederDB.cs",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Data\\SeederDB.cs",
+              "RelativeDocumentMoniker": "WebPizza\\Data\\SeederDB.cs",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Data\\SeederDB.cs",
+              "RelativeToolTip": "WebPizza\\Data\\SeederDB.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAzwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T17:18:13.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\appsettings.json",
+              "RelativeDocumentMoniker": "WebPizza\\appsettings.json",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\appsettings.json",
+              "RelativeToolTip": "WebPizza\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-11T15:22:22.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WebPizza.csproj",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\WebPizza.csproj",
+              "RelativeDocumentMoniker": "WebPizza\\WebPizza.csproj",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\WebPizza.csproj",
+              "RelativeToolTip": "WebPizza\\WebPizza.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T16:15:40.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebPizza\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebPizza\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-11T15:20:48.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WebPizza",
+              "DocumentMoniker": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\WebPizza.csproj",
+              "RelativeDocumentMoniker": "WebPizza\\WebPizza.csproj",
+              "ToolTip": "E:\\AndroidPizza\\Backend\\WebPizza\\WebPizza\\WebPizza.csproj",
+              "RelativeToolTip": "WebPizza\\WebPizza.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T15:20:43.099Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 354,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
