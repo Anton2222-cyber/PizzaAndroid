@@ -26,7 +26,7 @@ public class BaseActivity extends AppCompatActivity {
             return true;
         }
         if(select==R.id.categories) {
-            Intent intent = new Intent(BaseActivity.this, CategoryListActivity.class);
+            Intent intent = new Intent(BaseActivity.this, CategoryActivity.class);
             startActivity(intent);
             return true;
         }

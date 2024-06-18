@@ -1,11 +1,11 @@
-package com.example.shop.models;
+package com.example.shop.dto;
 
-public class Category {
+public class CategoryItemDTO {
     private int id;
     private String name;
     private String image;
 
-    public Category(int id, String name, String image) {
+    public CategoryItemDTO(int id, String name, String image) {
         this.id = id;
         this.name = name;
         this.image = image;
