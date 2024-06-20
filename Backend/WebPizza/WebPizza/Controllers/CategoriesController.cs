@@ -80,42 +80,42 @@ public class CategoriesController(IMapper mapper,
         }
     }
 
-    //[HttpPut("{id}")]
-    //public async Task<IActionResult> Update(int id, [FromForm] CategoryUpdateVM vm)
-    //{
-    //    var validationResult = await updateValidator.ValidateAsync(vm);
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, [FromForm] CategoryUpdateVM vm)
+    {
+        //var validationResult = await updateValidator.ValidateAsync(vm);
 
-    //    if (!validationResult.IsValid)
-    //        return BadRequest(validationResult.Errors);
+        //if (!validationResult.IsValid)
+        //    return BadRequest(validationResult.Errors);
 
-    //    var category = await pizzaContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
-    //    if (category == null)
-    //    {
-    //        return NotFound();
-    //    }
+        var category = await pizzaContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
+        if (category == null)
+        {
+            return NotFound();
+        }
 
-    //    category.Name = vm.Name;
+        category.Name = vm.Name;
 
-    //    if (vm.Image != null)
-    //    {
-    //        imageService.DeleteImageIfExists(category.Image);
-    //        category.Image = await imageService.SaveImageAsync(vm.Image);
-    //    }
+        if (vm.Image != null)
+        {
+            imageService.DeleteImageIfExists(category.Image);
+            category.Image = await imageService.SaveImageAsync(vm.Image);
+        }
 
-    //    try
-    //    {
-    //        pizzaContext.Categories.Update(category);
-    //        await pizzaContext.SaveChangesAsync();
-    //        return Ok(category);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        if (vm.Image != null)
-    //        {
-    //            imageService.DeleteImageIfExists(category.Image);
-    //        }
-    //        return StatusCode(500, "Internal server error");
-    //    }
-    //}
+        try
+        {
+            pizzaContext.Categories.Update(category);
+            await pizzaContext.SaveChangesAsync();
+            return Ok(category);
+        }
+        catch (Exception ex)
+        {
+            if (vm.Image != null)
+            {
+                imageService.DeleteImageIfExists(category.Image);
+            }
+            return StatusCode(500, "Internal server error");
+        }
+    }
 
 }
