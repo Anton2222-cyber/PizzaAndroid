@@ -1,6 +1,10 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using WebPizza.Data;
+using WebPizza.Interfaces;
+using WebPizza.Mapper;
+using WebPizza.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,14 +17,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+
+builder.Services.AddAutoMapper(typeof(AppMapProfile));
+builder.Services.AddTransient<IImageService, ImageService>();
+builder.Services.AddTransient<IImageValidator, ImageValidator>();
+
+builder.Services.AddAutoMapper(typeof(AppMapProfile));
+builder.Services.AddTransient<IImageService, ImageService>();
+
+
+builder.Services.AddCors();
+
 var app = builder.Build();
 
+app.UseCors(configuration => configuration
+        .AllowAnyOrigin().AllowAnyHeader()
+        .AllowAnyMethod());
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
+//if (app.Environment.IsDevelopment())
+//{
+app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 
 
