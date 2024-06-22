@@ -55,6 +55,8 @@ public class MainActivity extends BaseActivity {
                 .into(imageView);
 
         chooseImageBtn.setOnClickListener(v -> openImagePicker());
+
+        setupBottomNavigationView(R.id.bottom_navigation);
     }
 
     private void openImagePicker() {
