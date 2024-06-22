@@ -37,7 +37,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoryCardViewHold
             CategoryItemDTO item = items.get(position);
             holder.getCategoryName().setText(item.getName());
             // Формування повного шляху до зображення
-            String imageUrl = Config.BASE_URL + "images/" + item.getImage();
+            String imageUrl = Config.BASE_URL + "images/" + item.getImage()+"?timestamp="+System.currentTimeMillis();
             Glide.with(holder.itemView.getContext())
                     .load(imageUrl)
                     .placeholder(R.drawable.placeholder_image)

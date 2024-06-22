@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity {
         });
 
 //        String url = "http://10.0.2.2:5174/images/corporate-user-icon.webp";
-        String url = "http://192.168.0.20:5174/images/corporate-user-icon.webp";
+        String url = "https://android.tohaproject.click/images/corporate-user-icon.webp"+"?timestamp="+System.currentTimeMillis();
         Glide.with(this)
                 .load(url)
                 .transform(new CircleCrop())
