@@ -3,6 +3,7 @@ using WebPizza.Data.Entities;
 using WebPizza.Data;
 using WebPizza.Services.PaginationServices.Base;
 using WebPizza.ViewModels.Category;
+using WebPizza.ViewModel.Category;
 
 namespace WebPizza.Services.PaginationServices;
 

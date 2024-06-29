@@ -12,7 +12,7 @@ public class IngredientControllerService(
     PizzaDbContext pizzaContext,
     IMapper mapper,
     IImageService imageService
-    ) : IIngredientControllerService
+    ) : Interfaces.IIngredientControllerService
 {
     public async Task CreateAsync(IngredientCreateVm vm)
     {

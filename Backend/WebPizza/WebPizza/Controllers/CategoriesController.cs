@@ -5,20 +5,23 @@ using Microsoft.EntityFrameworkCore;
 using WebPizza.Data;
 using WebPizza.Data.Entities;
 using WebPizza.Interfaces;
+using WebPizza.ViewModel.Category;
 using WebPizza.ViewModels.Category;
+using WebPizza.ViewModels.Pagination;
 
 namespace WebPizza.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
 public class CategoriesController(IMapper mapper,
     PizzaDbContext pizzaContext,
     IValidator<CategoryCreateVM> createValidator,
     //IValidator<CategoryUpdateVM> updateValidator,
+    IPaginationService<CategoryVm, CategoryFilterVm> pagination,
     IImageService imageService) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> GetAll()
     {
         try
         {
@@ -71,7 +74,7 @@ public class CategoriesController(IMapper mapper,
             await pizzaContext.Categories.AddAsync(category);
             await pizzaContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Get), new { id = category.Id }, category);
+            return CreatedAtAction(nameof(GetAll), new { id = category.Id }, category);
         }
         catch (Exception)
         {
@@ -108,13 +111,26 @@ public class CategoriesController(IMapper mapper,
             await pizzaContext.SaveChangesAsync();
             return Ok(category);
         }
-        catch (Exception ex)
+        catch
         {
             if (vm.Image != null)
             {
                 imageService.DeleteImageIfExists(category.Image);
             }
             return StatusCode(500, "Internal server error");
+        }
+    }
+
+    [HttpGet()]
+    public async Task<IActionResult> GetPage([FromQuery] CategoryFilterVm vm)
+    {
+        try
+        {
+            return Ok(await pagination.GetPageAsync(vm));
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
         }
     }
 

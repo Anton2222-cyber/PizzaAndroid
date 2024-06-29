@@ -1,4 +1,4 @@
-﻿namespace WebPizza.ViewModels.Category
+﻿namespace WebPizza.ViewModel.Category
 {
     public class CategoryVm
     {

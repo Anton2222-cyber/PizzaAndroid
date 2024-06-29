@@ -1,4 +1,4 @@
-﻿using WebPizza.ViewModels.Category;
+﻿using WebPizza.ViewModel.Category;
 using WebPizza.ViewModels.Ingredient;
 using WebPizza.ViewModels.PizzaSizes;
 

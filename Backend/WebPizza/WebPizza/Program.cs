@@ -9,6 +9,8 @@ using WebPizza.Services.ControllerServices.Interfaces;
 using WebPizza.Services.ControllerServices;
 using WebPizza.Services.PaginationServices;
 using WebPizza.ViewModels.Category;
+using WebPizza.ViewModel.Category;
+using WebPizza.ViewModels.Pizza;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +29,8 @@ builder.Services.AddAutoMapper(typeof(AppMapProfile));
 builder.Services.AddTransient<IImageService, ImageService>();
 builder.Services.AddTransient<IImageValidator, ImageValidator>();
 
+
+
 builder.Services.AddAutoMapper(typeof(AppMapProfile));
 builder.Services.AddTransient<IImageService, ImageService>();
 
@@ -36,6 +40,8 @@ builder.Services.AddTransient<ICategoryControllerService, CategoryControllerServ
 builder.Services.AddTransient<IPaginationService<CategoryVm, CategoryFilterVm>, CategoryPaginationService>();
 
 builder.Services.AddTransient<IIngredientControllerService, IngredientControllerService>();
+builder.Services.AddTransient<IPizzaControllerService, PizzaControllerService>();
+builder.Services.AddTransient<IPaginationService<PizzaVm, PizzaFilterVm>, PizzaPaginationService>();
 
 
 builder.Services.AddCors();
