@@ -13,6 +13,7 @@
     <string name="close">Close navigation Drawer</string>
     <string name="category_name">Назва категорії</string>
     <string name="categories">Категорії</string>
+    <string name="pizza_image">Опис</string>
 
 
 </resources>

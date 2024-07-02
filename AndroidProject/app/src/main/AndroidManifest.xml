@@ -28,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CategoryActivity" />
+        <activity android:name=".PizzaActivity" />
     </application>
 
 </manifest>
