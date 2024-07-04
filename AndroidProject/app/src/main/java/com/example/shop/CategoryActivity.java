@@ -2,6 +2,8 @@ package com.example.shop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,10 +59,9 @@ public class CategoryActivity extends BaseActivity implements OnCategoryClickLis
 
     @Override
     public void onCategoryClick(CategoryItemDTO category) {
-        if (category.getName().equalsIgnoreCase("Піца")) {
-            // Відкрийте нову активність для відображення піц
-            Intent intent = new Intent(this, PizzaActivity.class);
-            startActivity(intent);
-        }
+        Log.d("TAG", "onCategoryClick: " + category.getName());
+        Intent intent = new Intent(this, PizzaActivity.class);
+        intent.putExtra("CATEGORY_NAME", category.getName());
+        startActivity(intent);
     }
 }

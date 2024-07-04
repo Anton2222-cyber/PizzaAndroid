@@ -1,23 +1,24 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using WebPizza.Data;
-using WebPizza.Interfaces;
-using WebPizza.Services.ControllerServices.Interfaces;
-using WebPizza.ViewModel.Pizza;
+using Microsoft.EntityFrameworkCore;
 using WebPizza.ViewModels.Pizza;
+using WebPizza.Services.ControllerServices.Interfaces;
+using WebPizza.Services.Interfaces;
+using FluentValidation;
+using WebPizza.ViewModels.Category;
+using WebPizza.ViewModels.Ingredient;
 
 namespace WebPizza.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
 public class PizzaController(IMapper mapper,
-        IValidator<PizzaCreateVm> createValidator,
-        IPizzaControllerService service,
-        IPaginationService<PizzaVm, PizzaFilterVm> pagination,
-        PizzaDbContext pizzaContext
+    IValidator<PizzaCreateVm> createValidator,
+    IPizzaControllerService service,
+    IPaginationService<PizzaVm, PizzaFilterVm> pagination,
+    PizzaDbContext pizzaContext
     ) : ControllerBase
 {
     [HttpGet]
@@ -26,7 +27,6 @@ public class PizzaController(IMapper mapper,
         try
         {
             var list = await pizzaContext.Pizzas
-               //.Include(x => x.Photos)
                .ProjectTo<PizzaVm>(mapper.ConfigurationProvider)
                .ToArrayAsync();
 
@@ -50,6 +50,7 @@ public class PizzaController(IMapper mapper,
             return StatusCode(500, ex.Message);
         }
     }
+
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
@@ -84,6 +85,29 @@ public class PizzaController(IMapper mapper,
         }
     }
 
+
+    [HttpPatch]
+    public async Task<IActionResult> Update([FromForm] PizzaEditVm vm)
+    {
+        //var validationResult = await editValidator.ValidateAsync(vm);
+
+        //if (!validationResult.IsValid)
+        //{
+        //    return BadRequest(validationResult.Errors);
+        //}
+
+        try
+        {
+            await service.UpdateAsync(vm);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
@@ -97,5 +121,29 @@ public class PizzaController(IMapper mapper,
             return StatusCode(500, ex.Message);
         }
     }
+
+    [HttpGet]
+    public async Task<IActionResult> GetByCategory([FromQuery] string category)
+    {
+        try
+        {
+            var pizzas = await pizzaContext.Pizzas
+                .Where(p => p.Category.Name == category)
+                .ProjectTo<PizzaVm>(mapper.ConfigurationProvider)
+                .ToListAsync();
+
+            if (!pizzas.Any())
+                return NotFound();
+
+            return Ok(pizzas);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
+
+    
+
 
 }

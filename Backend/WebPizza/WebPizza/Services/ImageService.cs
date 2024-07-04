@@ -1,7 +1,7 @@
-﻿using SixLabors.ImageSharp;
+﻿using WebPizza.Services.Interfaces;
+using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Processing;
-using WebPizza.Interfaces;
 
 namespace WebPizza.Services;
 
@@ -116,8 +116,7 @@ public class ImageService(
 
     public string ImagesDir => Path.Combine(
         Directory.GetCurrentDirectory(),
-        //configuration["DataDir"] ?? throw new NullReferenceException("DataDir"),
-        configuration["ImagesDir"] ?? throw new NullReferenceException("Images")
+            configuration["ImagesDir"] ?? throw new NullReferenceException("Images")
     );
 
     public void DeleteImage(string nameWithFormat)
@@ -150,7 +149,6 @@ public class ImageService(
         foreach (var image in images)
             DeleteImageIfExists(image);
     }
-
 
     private List<int> Sizes
     {

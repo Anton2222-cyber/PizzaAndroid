@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using WebPizza.Data.Entities;
+using System.Diagnostics.Metrics;
 using WebPizza.Data;
+using WebPizza.Data.Entities;
 using WebPizza.Services.PaginationServices.Base;
 using WebPizza.ViewModels.Category;
-using WebPizza.ViewModel.Category;
 
 namespace WebPizza.Services.PaginationServices;
-
 public class CategoryPaginationService(
     PizzaDbContext context,
     IMapper mapper

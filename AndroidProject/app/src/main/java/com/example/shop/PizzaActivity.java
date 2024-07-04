@@ -17,11 +17,16 @@ import retrofit2.Response;
 public class PizzaActivity extends BaseActivity {
 
     RecyclerView rcPizzas;
+    private String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);
+
+        // Отримання категорії з інтенції
+        category = getIntent().getStringExtra("CATEGORY_NAME");
+
         rcPizzas = findViewById(R.id.rcPizzas);
         rcPizzas.setHasFixedSize(true);
         rcPizzas.setLayoutManager(new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false));
@@ -29,7 +34,7 @@ public class PizzaActivity extends BaseActivity {
         RetrofitClient
                 .getInstance()
                 .getPizzaApi()
-                .list()
+                .listByCategory(category)
                 .enqueue(new Callback<List<PizzaItemDTO>>() {
                     @Override
                     public void onResponse(Call<List<PizzaItemDTO>> call, Response<List<PizzaItemDTO>> response) {

@@ -74,6 +74,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_rounded_corner"
                     android:text="@string/login"
+                    android:onClick="onClickLogin"
                     android:id="@+id/login_btn"/>
 
                 <Button
