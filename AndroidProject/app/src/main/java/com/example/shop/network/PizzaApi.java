@@ -16,5 +16,6 @@ public interface PizzaApi {
     @GET("/api/pizza/getByCategory")
     Call<List<PizzaItemDTO>> listByCategory(@Query("category") String category);
 
-    
+    @GET("/api/pizza/getById/{id}")
+    Call<PizzaItemDTO> getById(@Path("id") int id);
 }
