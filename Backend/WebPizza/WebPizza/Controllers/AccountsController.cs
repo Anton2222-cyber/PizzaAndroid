@@ -6,6 +6,7 @@ using WebPizza.Services.ControllerServices.Interfaces;
 using WebPizza.Services.Interfaces;
 using WebPizza.ViewModels.Account;
 using WebPizza.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebPizza.Controllers
 {
@@ -19,7 +20,7 @@ namespace WebPizza.Controllers
     ) : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> SignIn([FromForm] SignInVm model)
+        public async Task<IActionResult> SignIn([FromBody] SignInVm model)
         {
             UserEntity? user = await userManager.FindByEmailAsync(model.Email);
 

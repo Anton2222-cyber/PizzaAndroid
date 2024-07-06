@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebPizza.Data;
@@ -12,6 +13,7 @@ namespace WebPizza.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
+[Authorize]
 public class CategoriesController(IMapper mapper,
     PizzaDbContext pizzaContext,
     IValidator<CategoryCreateVm> createValidator,
