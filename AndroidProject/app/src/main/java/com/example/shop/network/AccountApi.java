@@ -16,7 +16,7 @@ public interface AccountApi {
     Call<LoginResponseDTO> login(@Body LoginDTO loginDTO);
 
     @Multipart
-    @POST("/api/accounts/register")
+    @POST("/api/accounts/registration")
     Call<Void> registerUser(
             @Part("firstName") RequestBody firstName,
             @Part("lastName") RequestBody lastName,

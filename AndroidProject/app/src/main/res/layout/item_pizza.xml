@@ -27,7 +27,6 @@
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/ivPizzaImage"
         android:text="name"
-        android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/ivPizzaImage"
