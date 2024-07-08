@@ -13,7 +13,7 @@ namespace WebPizza.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class CategoriesController(IMapper mapper,
     PizzaDbContext pizzaContext,
     IValidator<CategoryCreateVm> createValidator,
