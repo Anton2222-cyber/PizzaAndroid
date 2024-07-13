@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebPizza.Data;
@@ -11,9 +12,11 @@ using WebPizza.Data;
 namespace WebPizza.Migrations
 {
     [DbContext(typeof(PizzaDbContext))]
-    partial class PizzaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240713161238_Add tbl_Filters")]
+    partial class Addtbl_Filters
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,7 +143,7 @@ namespace WebPizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tbl_categories", (string)null);
+                    b.ToTable("tbl_categories");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Filters.Filter", b =>
@@ -155,7 +158,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("PizzaId");
 
-                    b.ToTable("tbl_filters", (string)null);
+                    b.ToTable("tbl_filters");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterName", b =>
@@ -184,7 +187,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("tbl_filterNames", (string)null);
+                    b.ToTable("tbl_filterNames");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterValue", b =>
@@ -218,7 +221,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("FilterValueId");
 
-                    b.ToTable("tbl_filterValues", (string)null);
+                    b.ToTable("tbl_filterValues");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Identity.RoleEntity", b =>
@@ -367,7 +370,7 @@ namespace WebPizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tbl_ingredients", (string)null);
+                    b.ToTable("tbl_ingredients");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaEntity", b =>
@@ -406,7 +409,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("tbl_pizzas", (string)null);
+                    b.ToTable("tbl_pizzas");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaIngredientEntity", b =>
@@ -421,7 +424,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("IngredientId");
 
-                    b.ToTable("tbl_pizza_ingredients", (string)null);
+                    b.ToTable("tbl_pizza_ingredients");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaPhotoEntity", b =>
@@ -451,7 +454,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("PizzaId");
 
-                    b.ToTable("tbl_pizza_photos", (string)null);
+                    b.ToTable("tbl_pizza_photos");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaSizeEntity", b =>
@@ -469,7 +472,7 @@ namespace WebPizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tbl_sizes", (string)null);
+                    b.ToTable("tbl_sizes");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaSizePriceEntity", b =>
@@ -501,7 +504,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("SizeId");
 
-                    b.ToTable("tbl_pizza_sizes", (string)null);
+                    b.ToTable("tbl_pizza_sizes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

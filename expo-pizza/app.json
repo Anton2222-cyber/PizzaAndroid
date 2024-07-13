@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-pizza",
-    "slug": "expo-pizza",
+    "name": "my-react-native-pizza",
+    "slug": "my-react-native-pizza",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

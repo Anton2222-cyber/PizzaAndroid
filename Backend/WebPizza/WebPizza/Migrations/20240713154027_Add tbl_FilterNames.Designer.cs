@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebPizza.Data;
@@ -11,9 +12,11 @@ using WebPizza.Data;
 namespace WebPizza.Migrations
 {
     [DbContext(typeof(PizzaDbContext))]
-    partial class PizzaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240713154027_Add tbl_FilterNames")]
+    partial class Addtbl_FilterNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,22 +143,7 @@ namespace WebPizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tbl_categories", (string)null);
-                });
-
-            modelBuilder.Entity("WebPizza.Data.Entities.Filters.Filter", b =>
-                {
-                    b.Property<int>("FilterValueId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PizzaId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("FilterValueId", "PizzaId");
-
-                    b.HasIndex("PizzaId");
-
-                    b.ToTable("tbl_filters", (string)null);
+                    b.ToTable("tbl_categories");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterName", b =>
@@ -184,41 +172,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("tbl_filterNames", (string)null);
-                });
-
-            modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterValue", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("FilterNameId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("FilterValueId")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FilterNameId");
-
-                    b.HasIndex("FilterValueId");
-
-                    b.ToTable("tbl_filterValues", (string)null);
+                    b.ToTable("tbl_filterNames");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Identity.RoleEntity", b =>
@@ -367,7 +321,7 @@ namespace WebPizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tbl_ingredients", (string)null);
+                    b.ToTable("tbl_ingredients");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaEntity", b =>
@@ -406,7 +360,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("tbl_pizzas", (string)null);
+                    b.ToTable("tbl_pizzas");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaIngredientEntity", b =>
@@ -421,7 +375,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("IngredientId");
 
-                    b.ToTable("tbl_pizza_ingredients", (string)null);
+                    b.ToTable("tbl_pizza_ingredients");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaPhotoEntity", b =>
@@ -451,7 +405,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("PizzaId");
 
-                    b.ToTable("tbl_pizza_photos", (string)null);
+                    b.ToTable("tbl_pizza_photos");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaSizeEntity", b =>
@@ -469,7 +423,7 @@ namespace WebPizza.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tbl_sizes", (string)null);
+                    b.ToTable("tbl_sizes");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.PizzaSizePriceEntity", b =>
@@ -501,7 +455,7 @@ namespace WebPizza.Migrations
 
                     b.HasIndex("SizeId");
 
-                    b.ToTable("tbl_pizza_sizes", (string)null);
+                    b.ToTable("tbl_pizza_sizes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -540,49 +494,15 @@ namespace WebPizza.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WebPizza.Data.Entities.Filters.Filter", b =>
-                {
-                    b.HasOne("WebPizza.Data.Entities.Filters.FilterValue", "FilterValue")
-                        .WithMany()
-                        .HasForeignKey("FilterValueId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebPizza.Data.Entities.PizzaEntity", "Pizza")
-                        .WithMany()
-                        .HasForeignKey("PizzaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FilterValue");
-
-                    b.Navigation("Pizza");
-                });
-
             modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterName", b =>
                 {
                     b.HasOne("WebPizza.Data.Entities.CategoryEntity", "Category")
-                        .WithMany("FilterNames")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterValue", b =>
-                {
-                    b.HasOne("WebPizza.Data.Entities.Filters.FilterName", "FilterName")
-                        .WithMany()
-                        .HasForeignKey("FilterNameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebPizza.Data.Entities.Filters.FilterValue", null)
-                        .WithMany("FilterValues")
-                        .HasForeignKey("FilterValueId");
-
-                    b.Navigation("FilterName");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Identity.UserRoleEntity", b =>
@@ -666,14 +586,7 @@ namespace WebPizza.Migrations
 
             modelBuilder.Entity("WebPizza.Data.Entities.CategoryEntity", b =>
                 {
-                    b.Navigation("FilterNames");
-
                     b.Navigation("Pizzas");
-                });
-
-            modelBuilder.Entity("WebPizza.Data.Entities.Filters.FilterValue", b =>
-                {
-                    b.Navigation("FilterValues");
                 });
 
             modelBuilder.Entity("WebPizza.Data.Entities.Identity.RoleEntity", b =>

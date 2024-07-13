@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using SixLabors.ImageSharp;
 using WebPizza.Constants;
 using WebPizza.Data.Entities;
+using WebPizza.Data.Entities.Filters;
 using WebPizza.Data.Entities.Identity;
 using WebPizza.Services;
 using WebPizza.Services.Interfaces;
@@ -207,6 +208,80 @@ public static class SeederDB
                 context.Pizzas.AddRange(fakePizzas);
                 await context.SaveChangesAsync();
             }
+
+
+            if (await context.FilterNames.CountAsync() < 1)
+            {
+                int categoryId = 1;
+                var size = new FilterName
+                {
+                    Name = "Розмір",
+                    CategoryId = categoryId
+                };
+                context.FilterNames.Add(size);
+
+                var weight = new FilterName
+                {
+                    Name = "Вага",
+                    CategoryId = categoryId
+                };
+                context.FilterNames.Add(weight);
+                await context.SaveChangesAsync();
+            }
+
+            if (await context.FilterValues.CountAsync() < 1)
+            {
+                var sizes = new List<FilterValue>
+                {
+                   new () { Name = "24", FilterNameId = 1 },
+                   new () { Name = "26", FilterNameId = 1 },
+                   new () { Name = "30", FilterNameId = 1 },
+                   new () { Name = "32", FilterNameId = 1 },
+                   new () { Name = "34", FilterNameId = 1 }
+                };
+                context.FilterValues.AddRange(sizes);
+                await context.SaveChangesAsync();
+
+                var weights = new List<FilterValue>
+                {
+                   new () { Name = "450", FilterNameId = 2 },
+                   new () { Name = "950", FilterNameId = 2 },
+                   new () { Name = "1200", FilterNameId = 2 },
+                   new () { Name = "1500", FilterNameId = 2 },
+                   new () { Name = "2000", FilterNameId = 2 }
+                };
+                context.FilterValues.AddRange(weights);
+                await context.SaveChangesAsync();
+            }
+
+            if (await context.Filters.CountAsync() < 1)
+            {
+                var filters = new List<Filter>()
+                {
+                   new() { PizzaId = 1, FilterValueId = 1 },
+                   new() { PizzaId = 1, FilterValueId = 4 },
+                   new() { PizzaId = 1, FilterValueId = 7 },
+                   
+                   new() { PizzaId = 2, FilterValueId = 2 },
+                   new() { PizzaId = 2, FilterValueId = 5 },
+                   new() { PizzaId = 2, FilterValueId = 8 },
+                   
+                   new() { PizzaId = 3, FilterValueId = 3 },
+                   new() { PizzaId = 3, FilterValueId = 6 },
+                   new() { PizzaId = 3, FilterValueId = 9 },
+                   
+                   new() { PizzaId = 4, FilterValueId = 4 },
+                   new() { PizzaId = 4, FilterValueId = 7 },
+                   new() { PizzaId = 4, FilterValueId = 10 },
+                   
+                   new() { PizzaId = 5, FilterValueId = 5 },
+                   new() { PizzaId = 5, FilterValueId = 8 },
+                   
+                };
+                context.Filters.AddRange(filters);
+                await context.SaveChangesAsync();
+            }
+
 
         }
     }

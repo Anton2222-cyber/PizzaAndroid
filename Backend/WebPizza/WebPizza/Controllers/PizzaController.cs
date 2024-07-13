@@ -9,6 +9,7 @@ using WebPizza.Services.Interfaces;
 using FluentValidation;
 using WebPizza.ViewModels.Category;
 using WebPizza.ViewModels.Ingredient;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WebPizza.Controllers;
 
@@ -37,6 +38,48 @@ public class PizzaController(IMapper mapper,
             return StatusCode(500, "Internal server error");
         }
     }
+
+    [HttpGet]
+    public async Task<IActionResult> Search([FromQuery] PizzaSearchVm search)
+    {
+        try
+        {
+            var query = pizzaContext.Pizzas.AsQueryable();
+
+            if (search.ValuesId != null && search.ValuesId.Length > 0)
+            {
+                
+                var filterValues = await pizzaContext.FilterValues
+                    .Include(fv => fv.FilterName)
+                    .Where(fv => search.ValuesId.Contains(fv.Id))
+                    .ToListAsync();
+
+                
+                var groupedFilterValues = filterValues
+                    .GroupBy(fv => fv.FilterName.Name)
+                    .ToList();
+
+                
+                foreach (var group in groupedFilterValues)
+                {
+                    var ids = group.Select(fv => fv.Id).ToList();
+                    query = query.Where(p => p.Filters.Any(f => ids.Contains(f.FilterValueId)));
+                }
+            }
+
+            var list = await query
+                .ProjectTo<PizzaVm>(mapper.ConfigurationProvider)
+                .ToArrayAsync();
+
+            return Ok(list);
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, "Internal server error");
+        }
+    }
+
+
 
     [HttpGet]
     public async Task<IActionResult> GetPage([FromQuery] PizzaFilterVm vm)
@@ -143,7 +186,9 @@ public class PizzaController(IMapper mapper,
         }
     }
 
+
     
+
 
 
 }
