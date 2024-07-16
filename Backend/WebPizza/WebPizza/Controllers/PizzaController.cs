@@ -48,18 +48,20 @@ public class PizzaController(IMapper mapper,
 
             if (search.ValuesId != null && search.ValuesId.Length > 0)
             {
-                
+                // Отримати всі значення фільтрів разом з їхніми іменами
                 var filterValues = await pizzaContext.FilterValues
                     .Include(fv => fv.FilterName)
                     .Where(fv => search.ValuesId.Contains(fv.Id))
                     .ToListAsync();
 
-                
+                // Групувати значення фільтрів за їхніми іменами (FilterName)
                 var groupedFilterValues = filterValues
                     .GroupBy(fv => fv.FilterName.Name)
                     .ToList();
 
-                
+
+
+                // Побудова динамічного запиту з різними логіками(AND для однієї групи, OR для різних груп)
                 foreach (var group in groupedFilterValues)
                 {
                     var ids = group.Select(fv => fv.Id).ToList();
